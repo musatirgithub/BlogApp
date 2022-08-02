@@ -27,12 +27,15 @@ export const useFetch=()=>{
     return {isLoading,blogs}
 }
 
-  export const createBlog = async () => {
+  export const createBlog = async (definition, displayName, title, uid, url ) => {
     const usersCollectionRef = collection(db, "blogs");
     await addDoc(usersCollectionRef, {
-    //   name: name,
-    //   phone: phone,
-    //   gender: gender,
+      definition: definition,
+      displayName:displayName,
+      likers:['null'],
+      title: title,
+      uid:uid,
+      url: url
     });
   };
 
@@ -47,11 +50,6 @@ export const useFetch=()=>{
     const blogsDoc = doc(db, "blogs", blogId);
     const newFields = { 'title':title, 'url': url, 'definition': definition };
     await updateDoc(blogsDoc, newFields);
-    // setEdit(false);
-    // getContacts();
-    // setName('');
-    // setPhone('');
-    // setGender('');
   };
 
   export  const updateLikes = async (blogId, likers, uid) => {

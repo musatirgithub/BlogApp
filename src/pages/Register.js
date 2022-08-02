@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Avatar from '@mui/material/Avatar';
-import { FaLock } from 'react-icons/fa';
+import { FaUserEdit } from 'react-icons/fa';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { createUser } from '../helpers/firebase';
@@ -29,7 +29,7 @@ const LoginPage = () => {
         }}
         sizes="100px"
       >
-        <FaLock size="40" />
+        <FaUserEdit size="40" />
       </Avatar>
       <Typography variant="h4" align="center" mb={4} color="primary.dark">
         Register
