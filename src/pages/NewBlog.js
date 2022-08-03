@@ -19,6 +19,9 @@ export default function NewBlog() {
   const [values, setValues] = useState({title:'',url:'', definition:''});
 
   const handleAddNewBlog = ()=>{
+      if (values.title === '') { values.title = 'New title'};
+      if (values.definition === '') { values.definition = 'New title'};
+      if (values.url === '') { values.url = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/af/4a/c6/decouvrez-strasbourg.jpg?w=1200&h=-1&s=1'};
       createBlog(values.definition, currentUser.displayName, values.title, currentUser.uid, values.url)
       setValues({title:'',url:'', definition:''})
       navigate('/')

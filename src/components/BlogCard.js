@@ -54,6 +54,9 @@ export default function BlogCard({blog}) {
         <Typography variant="body2" color="text.secondary">
           {blog.definition}
         </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {`Added by ${blog.displayName}`}
+        </Typography>
       </CardContent>
       <CardActions sx={{display:'flex', justifyContent:'space-between'}}>
         <Box>
