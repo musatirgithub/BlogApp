@@ -9,13 +9,13 @@ const Dashboard = () => {
 
   return isLoading ? (<div>Loading...</div>
   ) : (
-    <Grid container spacing={1} 
+    <Grid container spacing={6} 
     justifyContent="center" 
     alignItems="center"
     sx={{marginTop:'3rem'}}>
 {    blogs.map((blog)=> {
       return (
-        <Grid item key={blog.id} xs={12} sm={6} md={4}>
+        <Grid item key={blog.id} >
           <BlogCard blog={blog} />
         </Grid>
       )

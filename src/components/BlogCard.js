@@ -40,7 +40,7 @@ export default function BlogCard({blog}) {
   
   return (
     !blogDeleted &&
-    <Card sx={{ maxWidth: 345, margin:'0 auto 3rem' }}>
+    <Card sx={{ width: 345, margin:'0 auto 3rem' }}>
       <CardMedia
         component="img"
         alt={blog.title}
