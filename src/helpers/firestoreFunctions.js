@@ -39,13 +39,6 @@ export const useFetch=()=>{
     });
   };
 
-  export const bringBlog = async (id, name, phone, gender) => {
-    // setName(name);
-    // setPhone(phone);
-    // setGender(gender);
-  };
-
-  
   export  const updateBlog = async (blogId, title, url, definition) => {
     const blogsDoc = doc(db, "blogs", blogId);
     const newFields = { 'title':title, 'url': url, 'definition': definition };

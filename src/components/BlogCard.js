@@ -11,6 +11,7 @@ import { AuthContext } from "../contexts/AuthContext";
 import {updateLikes} from '../helpers/firestoreFunctions';
 import {useNavigate} from 'react-router-dom';
 import { deleteBlog } from '../helpers/firestoreFunctions';
+import toast from 'react-hot-toast';
 
 
 export default function BlogCard({blog}) {
@@ -26,7 +27,7 @@ export default function BlogCard({blog}) {
       setLikeCount(likeCount + 1);
       setIsLikedByUser(true);
     } else{
-      alert('You can like a blog only once!')
+      toast.error('You can like a blog only once!')
     }
   }
   
@@ -39,7 +40,7 @@ export default function BlogCard({blog}) {
   
   return (
     !blogDeleted &&
-    <Card sx={{ maxWidth: 345, margin:'0 auto' }}>
+    <Card sx={{ maxWidth: 345, margin:'0 auto 3rem' }}>
       <CardMedia
         component="img"
         alt={blog.title}

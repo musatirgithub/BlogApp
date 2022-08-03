@@ -22,6 +22,10 @@ const LoginPage = () => {
         signIn(email, password, navigate)
     }
 
+    const handleForgotPassword = (email)=>{
+      forgotPassword(email);
+    }
+
   return (
     <Container maxWidth="sm" sx={{ mt: '10rem', textAlign: 'center' }}>
       <Avatar
@@ -93,9 +97,12 @@ const LoginPage = () => {
                 helperText={touched.password && errors.password}
                 error={touched.password && Boolean(errors.password)}
               />
-              <Button type="submit" variant="contained" size="large">
+              <Button type="submit" variant="contained" size="large" disabled={Boolean(errors.email) || Boolean(errors.password)}>
                 Login
               </Button>
+              {!Boolean(errors.email) && <Button onClick={()=>handleForgotPassword(values.email)} variant="text" size="large">
+                FORGOT your password?
+              </Button>}
               <Button onClick={handleProviderLogin} variant="contained" size="large">
                 Login with Google
               </Button>

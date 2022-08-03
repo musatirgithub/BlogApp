@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   return isLoading ? (<div>Loading...</div>
   ) : (
-    <Grid container spacing={2} 
+    <Grid container spacing={1} 
     justifyContent="center" 
     alignItems="center"
     sx={{marginTop:'3rem'}}>

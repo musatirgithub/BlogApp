@@ -42,6 +42,7 @@ export default function MenuAppBar() {
   const handleLogout = ()=>{
     handleClose();
     logOut();
+    navigate('/about');
   }
 
   const handleProfile = ()=>{
@@ -112,10 +113,9 @@ export default function MenuAppBar() {
               >
               {currentUser ? <div>
                 <MenuItem onClick={handleDashboard}>Home</MenuItem>
-                <MenuItem onClick={handleDetails}>Details</MenuItem>
                 <MenuItem onClick={handleAbout}>About</MenuItem>
                 <MenuItem onClick={handleNewBlog}>NewBlog</MenuItem>
-                <MenuItem onClick={handleProfile}>Profile</MenuItem>
+                <MenuItem onClick={handleProfile}>My Posts</MenuItem>
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
 
               </div> :
