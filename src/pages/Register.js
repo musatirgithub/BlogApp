@@ -39,20 +39,20 @@ const LoginPage = () => {
         initialValues={{ fullName: '', email: '', password: '' }}
         validationSchema={Yup.object().shape({
           fullName: Yup.string()
-            .max(20, 'fullname 20 veya daha az karakter olmalıdır')
-            .required('Lutfen fullname kismini bos birakmayiniz'),
+            .max(20, 'Fullname should be less than 16 characters')
+            .required(`Fullname can't be empty`),
 
-          email: Yup.string()
-            .email('Lutfen gecerli email adresini giriniz.')
-            .required('Lutfen email kismini bos birakmayiniz'),
+            email: Yup.string()
+            .email('Please enter a valid email address')
+            .required(`Email can't be empty`),
           password: Yup.string()
-            .min(8, 'Sifre en az 8 karakter icermelidir')
-            .max(16, 'Sifre en fazla 16 karakter icermelidir.')
-            .required('Lutfen password kismini bos birakmayiniz')
-            .matches(/\d+/, 'Sifre rakam icermelidir')
-            .matches(/[a-z]+/, 'Sifre kucuk harf icermelidir')
-            .matches(/[A-Z]+/, 'Sifre buyuk harf icermelidir')
-            .matches(/[!,?{}><%&$#£+-.]+/, 'Sifreniz ozel karakter icermelidir'),
+            .min(8, 'Password should be at least 8 characters')
+            .max(16, 'Password should be less than 16 characters')
+            .required(`Password can't be empty`)
+            .matches(/\d+/, 'Password should contain digit')
+            .matches(/[a-z]+/, 'Password should contain lower case character')
+            .matches(/[A-Z]+/, 'Password should contain upper case character')
+            .matches(/[!,?{}><%&$#£+-.]+/, 'Password should contain special character'),
         })}
         onSubmit={(values, actions) => {
           alert(`fullName: ${values.fullName}
@@ -102,7 +102,7 @@ const LoginPage = () => {
                 helperText={touched.password && errors.password}
                 error={touched.password && Boolean(errors.password)}
               />
-              <Button type="submit" variant="contained" size="large">
+              <Button type="submit" variant="contained" size="large" disabled={(values.fullName === '' && values.email === '' && values.password === '') || Boolean(errors.fullName) || Boolean(errors.email) || Boolean(errors.password)}>
                 Register
               </Button>
             </Box>

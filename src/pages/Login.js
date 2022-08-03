@@ -45,21 +45,18 @@ const LoginPage = () => {
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={Yup.object().shape({
-          fullName: Yup.string()
-            .max(20, 'fullname 20 veya daha az karakter olmalıdır')
-            .required('Lutfen fullname kismini bos birakmayiniz'),
 
           email: Yup.string()
-            .email('Lutfen gecerli email adresini giriniz.')
-            .required('Lutfen email kismini bos birakmayiniz'),
+            .email('Please enter a valid email address')
+            .required(`Email can't be empty`),
           password: Yup.string()
-            .min(8, 'Sifre en az 8 karakter icermelidir')
-            .max(16, 'Sifre en fazla 16 karakter icermelidir.')
-            .required('Lutfen password kismini bos birakmayiniz')
-            .matches(/\d+/, 'Sifre rakam icermelidir')
-            .matches(/[a-z]+/, 'Sifre kucuk harf icermelidir')
-            .matches(/[A-Z]+/, 'Sifre buyuk harf icermelidir')
-            .matches(/[!,?{}><%&$#£+-.]+/, 'Sifreniz ozel karakter icermelidir'),
+            .min(8, 'Password should be at least 8 characters')
+            .max(16, 'Password should be less than 16 characters')
+            .required(`Password can't be empty`)
+            .matches(/\d+/, 'Password should contain digit')
+            .matches(/[a-z]+/, 'Password should contain lower case character')
+            .matches(/[A-Z]+/, 'Password should contain upper case character')
+            .matches(/[!,?{}><%&$#£+-.]+/, 'Password should contain special character'),
         })}
         onSubmit={(values, actions) => {
           alert(`fullName: ${values.fullName}
@@ -97,10 +94,10 @@ const LoginPage = () => {
                 helperText={touched.password && errors.password}
                 error={touched.password && Boolean(errors.password)}
               />
-              <Button type="submit" variant="contained" size="large" disabled={Boolean(errors.email) || Boolean(errors.password)}>
+              <Button type="submit" variant="contained" size="large" disabled={(values.email === '' && values.password === '') || Boolean(errors.email) || Boolean(errors.password)}>
                 Login
               </Button>
-              {!Boolean(errors.email) && <Button onClick={()=>handleForgotPassword(values.email)} variant="text" size="large">
+              {(!(values.email === '' && values.password === '') && !Boolean(errors.email)) && <Button onClick={()=>handleForgotPassword(values.email)} variant="text" size="large">
                 FORGOT your password?
               </Button>}
               <Button onClick={handleProviderLogin} variant="contained" size="large">
