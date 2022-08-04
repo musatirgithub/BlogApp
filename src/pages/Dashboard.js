@@ -2,7 +2,7 @@
 
 import BlogCard from "../components/BlogCard";
 import { useFetch } from "../helpers/firestoreFunctions";
-import {Grid} from '@mui/material';
+import {Box, Grid} from '@mui/material';
 
 const Dashboard = () => {
   const { isLoading, blogs, getBlogs } = useFetch();
@@ -12,12 +12,11 @@ const Dashboard = () => {
     <Grid container spacing={6} 
     justifyContent="center" 
     alignItems="center"
-    sx={{marginTop:'3rem'}}>
-{    blogs.map((blog)=> {
+    gap='3rem'
+    sx={{ maxWidth:'100%', margin:'3rem auto'}}>
+      {blogs.map((blog)=> {
       return (
-        <Grid item key={blog.id} >
-          <BlogCard blog={blog} getBlogs={getBlogs}/>
-        </Grid>
+          <BlogCard key={blog.id} blog={blog} />
       )
     })}
 

@@ -19,7 +19,6 @@ export const useFetch=()=>{
       const data = await getDocs(usersCollectionRef);
       setBlogs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       setIsLoading(false);
-      console.log(blogs);  
   }
     useEffect(() => {
  
