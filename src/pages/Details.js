@@ -80,7 +80,7 @@ useEffect(() => {
           return (
             item !== 'null' &&
           <Typography gutterBottom variant="body2" component="div" key={index}>
-          <span style={{fontweight:'700'}}>{`${item.displayName}:`}</span>{`${item.comment}`}
+          <span style={{fontweight:'900', color:'#1565C0'}}>{`${item.displayName}: `}</span>{`${item.comment}`}
         </Typography>
           )
         })}
