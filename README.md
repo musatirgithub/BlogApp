@@ -14,4 +14,3 @@
 <div class="pics">
   <img src="https://github.com/musatirgithub/BlogApp/BlogApp.gif" width="600px">
 </div>
-![](https://github.com/musatirgithub/BlogApp/BlogApp.gif)
