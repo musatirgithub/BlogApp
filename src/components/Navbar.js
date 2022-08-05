@@ -78,7 +78,7 @@ export default function MenuAppBar() {
       <AppBar position="static">
         <Toolbar>
 
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography onClick={()=>navigate('/')} variant="h6" component="div"  style={{cursor:'pointer', width:'7.2rem'}}>
             Shutter Blog
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'right', paddingRight:'1rem' }}>
