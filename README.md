@@ -1,5 +1,4 @@
 # [Click here to reach Shutter Blog App](https://blog-ly4zr54y5-musatirgithub.vercel.app/)
-![](https://musatirgithub.github.io/BlogApp/BlogApp.gif)
 <h3>Hi there ✋. In this project, I've prepared a blog app.</h3>
 <ul>
   <li>Everybody can see the blogs without any restrictions,</li>
@@ -14,5 +13,4 @@
 </ul>  
 <div class="pics">
   <img src="https://github.com/musatirgithub/BlogApp/blob/master/BlogApp.gif?raw=true" width="600px">
-  <img src="https://musatirgithub.github.io/BlogApp/BlogApp.gif" width="600px">
 </div>
