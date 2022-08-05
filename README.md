@@ -13,4 +13,5 @@
 </ul>  
 <div class="pics">
   <img src="https://github.com/musatirgithub/BlogApp/BlogApp.gif" width="600px">
+  <img src="https://musatirgithub.github.io/BlogApp/BlogApp.gif" width="600px">
 </div>
